@@ -13,3 +13,21 @@ exclude = '''
   )/
 )
 '''
+[tool.isort]
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 79
+
+# 3 stands for Vertical Hanging Indent, e.g.
+# from third_party import (
+#     lib1,
+#     lib2,
+#     lib3,
+# )
+# docs: https://github.com/timothycrosley/isort#multi-line-output-modes
+multi_line_output = 3
+skip = "target"
+skip_glob = "**/gen/*,.venv*/*,venv*/*,**/proto/*"
+known_first_party = "opentelemetry,opentelemetry_example_app"
+known_third_party = "psutil,pytest,redis,redis_opentracing"
